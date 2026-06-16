@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style/style.css') }}"
+    />
+    <title>Water Demand Forecasting | About us</title>
+  </head>
+  <body>
+    <div class="bg"></div>
+    <header>
+      <img
+        src="{{url_for('static',filename='images/icon.png')}}"
+        alt=""
+        class="icon"
+      />
+      <h1 class="title">Water Demand Forecasting</h1>
+      <nav>
+        <a href="{{url_for('home')}}"
+          ><button class="Btn" style="right: 190px">Home</button></a
+        >
+        <a href="{{url_for('main')}}"><button class="Btn">Main</button></a>
+      </nav>
+    </header>
+    <div class="bg"></div>
+  </body>
+</html>

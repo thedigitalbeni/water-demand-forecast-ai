@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}" />
+    <title>Water Demand Forecasting | Home</title>
+  </head>
+  <body>
+    <div class="bg"></div>
+    <header>
+      <img
+        src="{{ url_for('static', filename='images/icon.png') }}"
+        alt=""
+        class="icon"
+      />
+      <h1 class="title">Water Demand Forecasting</h1>
+      <nav>
+        <a href="{{ url_for('main') }}"
+          ><button class="Btn" style="right: 190px">Main</button></a
+        >
+        <a href="{{ url_for('aboutus') }}"
+          ><button class="Btn">About Us</button></a
+        >
+      </nav>
+    </header>
+    <section class="hero">
+      <h2>Welcome to Water Demand Forecasting</h2>
+      <p>
+        Our tool helps you predict water demand with accuracy, leveraging
+        advanced machine learning techniques.
+      </p>
+      <a href="{{url_for('main')}}" class="cta-button">Explore Now</a>
+    </section>
+    <section class="features">
+      <h2>Features</h2>
+      <div class="feature">
+        <h3>Accurate Predictions</h3>
+        <p>
+          Get precise forecasts based on historical data and machine learning
+          algorithms.
+        </p>
+      </div>
+      <div class="feature">
+        <h3>Easy to Use</h3>
+        <p>
+          Our intuitive interface makes it easy for you to input data and get
+          results.
+        </p>
+      </div>
+      <div class="feature">
+        <h3>Real-Time Analysis</h3>
+        <p>Analyze data in real time to make informed decisions quickly.</p>
+      </div>
+    </section>
+    <section class="testimonials">
+      <h2>What Users Say</h2>
+      <blockquote>
+        <p>
+          "This tool has revolutionized our water management strategies. Highly
+          recommend!"
+        </p>
+        <footer>- Jane Doe, Water Resource Manager</footer>
+      </blockquote>
+    </section>
+    <footer>
+      <p>&copy; 2024 Water Demand Forecasting. All rights reserved.</p>
+      <p>
+        Contact us:
+        <a href="mailto:info@waterforecasting.com">info@waterforecasting.com</a>
+      </p>
+      <p>
+        Follow us on:
+        <a
+          href="https://www.youtube.com/@beni12km"
+          target="_blank"
+          rel="noopener noreferrer"
+          >YouTube</a
+        >,
+        <a
+          href="https://www.instagram.com/beni12km/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Instagram</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>

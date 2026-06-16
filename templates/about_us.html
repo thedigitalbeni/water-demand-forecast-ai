@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="about_us.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/about_us.css') }}">
+    <style>
+        body{
+            background-image: url("{{url_for('static',filename='images/bg.jpg')}}");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        .bg {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          background-image: url("{{url_for('static',filename='images/bg.jpg')}}");
+          background-repeat: no-repeat;
+          background-size: cover;
+          z-index: -1;
+          filter: blur(1px);
+        }
+
+        header {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 35px;
+          background-color: rgba(255, 255, 255, 0.3);
+          backdrop-filter: blur(10px);
+          padding: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        nav {
+          display: flex;
+          gap: 20px;
+        }
+
+        .Btn {
+          position: absolute;
+          right: 30px;
+          top: 10px;
+          width: 130px;
+          height: 35px;
+          border-radius: 45px;
+          border: none;
+          background-color: rgb(151, 95, 255);
+          color: white;
+          box-shadow: 0px 10px 10px rgb(210, 187, 253) inset,
+            0px 5px 10px rgba(5, 5, 5, 0.212), 0px -10px 10px rgb(124, 54, 255) inset;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .Btn::before {
+          width: 70%;
+          height: 2px;
+          position: absolute;
+          background-color: rgba(250, 250, 250, 0.678);
+          content: "";
+          filter: blur(1px);
+          top: 7px;
+          border-radius: 50%;
+        }
+
+        .Btn::after {
+          width: 70%;
+          height: 2px;
+          position: absolute;
+          background-color: rgba(250, 250, 250, 0.137);
+          content: "";
+          filter: blur(1px);
+          bottom: 7px;
+          border-radius: 50%;
+        }
+
+        .Btn:hover {
+          animation: jello-horizontal 0.9s both;
+        }
+
+        @keyframes jello-horizontal {
+          0% {
+            transform: scale3d(1, 1, 1);
+          }
+
+          30% {
+            transform: scale3d(1.25, 0.75, 1);
+          }
+
+          40% {
+            transform: scale3d(0.75, 1.25, 1);
+          }
+
+          50% {
+            transform: scale3d(1.15, 0.85, 1);
+          }
+
+          65% {
+            transform: scale3d(0.95, 1.05, 1);
+          }
+
+          75% {
+            transform: scale3d(1.05, 0.95, 1);
+          }
+
+          100% {
+            transform: scale3d(1, 1, 1);
+          }
+        }
+
+        .title {
+          font-size: larger;
+          font-weight: bold;
+          font-family: Georgia, "Times New Roman", Times, serif;
+          color: blue;
+          text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Added shadow */
+        }
+
+        .icon {
+          position: absolute;
+          top: 3px;
+          right: 50%;
+          left: 46%;
+          width: 50px;
+          height: 50px;
+        }
+
+        p{
+          font-size: large;
+          }
+        th {
+          background-color: #7dd9f0;
+          color: #000;
+          padding: 12px;
+          text-align: center;
+          }
+        td{
+          padding: 12px;
+          text-align: center;
+          transition: background-color 0.3s ease;
+          }
+        tr:nth-child(odd) {
+          background-color: #f2f2f2;
+          }
+        tr:nth-child(even) {
+          background-color: gray;
+          }
+        tr:hover td {
+          background-color: #ddd;
+          }
+        table:hover {
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+          }
+  </style>
+</head>
+<body style="background-color: rgb(170, 203, 203);">
+
+    <div class="bg"></div>
+    <header>
+      <img src="{{ url_for('static', filename='images/icon.png') }}" alt="" class="icon" />
+      <h1 class="title">Water Demand Forecasting</h1>
+      <nav>
+        <a href="{{url_for('home')}}"
+          ><button class="Btn" style="right: 190px">Home</button></a
+        >
+        <a href="{{url_for('main')}}"><button class="Btn">Main</button></a>
+      </nav>
+    </header>
+    <h1 style="
+                padding: 50px 5px 5px 5px;
+                text-align: center; 
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                ">About Us</h1>
+    <div class = 'card' >
+      <h2 class = "card-title"><span>Our Services</span></h2>
+          <p class="card-description">We provide a comprehensive suite of AI-powered tools designed to forecast water demand with unparalleled accuracy. Our services include:
+
+           <br> <i><b><u>Data Analysis and Forecasting</u>:</b></i> Utilizing advanced algorithms and machine learning techniques, our platform analyzes diverse data sources, including weather patterns, historical usage, demographic trends, and more, to provide precise demand forecasts.
+
+           <br><i><b><u>Custom Solutions</u>:</b></i> Tailored to meet the specific needs of utilities, municipalities, and large-scale water users, our customizable models offer flexible and scalable forecasting solutions for different regions and climates.
+
+           <br><i><b><u>Real-Time Monitoring</u>:</b></i> Our platform offers real-time monitoring and updates, enabling proactive adjustments to water management strategies in response to changing conditions.
+
+            <br><i><b><u></u>User-Friendly Interface</u>:</b></i> With a focus on accessibility and ease of use, our platform provides clear, actionable insights that help users optimize water distribution, reduce operational costs, and enhance sustainability.</p>
+          <!-- <button class = "card-button">Learn More</button> -->
+    </div>
+    
+    <div class="card">
+      <h2 class="card-title"><span>Mission</span></h2>
+        <p class="card-description">Our mission is to empower communities and organizations to manage their water resources effectively through innovative AI-driven forecasting tools. We are dedicated to minimizing water waste, ensuring reliable supply, and supporting sustainable development. By providing accurate, real-time predictions and actionable insights, we help our partners make data-driven decisions that benefit both people and the environment.</p>
+      <!-- <button class="card-button">Learn More</button> -->
+    </div>
+    <div class="card">
+      <h2 class="card-title"><span>Vision</span></h2>
+        <p class="card-description">Our vision is a world where every drop of water is used efficiently, responsibly, and sustainably. We aspire to be the global leader in AI-based water management solutions, driving the transformation towards a future where water scarcity is a challenge of the past. Through continuous innovation and collaboration, we aim to create a water-secure world where communities thrive, ecosystems flourish, and businesses grow without compromising future generations' needs.</p>
+      <!-- <button class="card-button">Learn More</button> -->
+    </div>
+</body>
+</html>
+
+
+
